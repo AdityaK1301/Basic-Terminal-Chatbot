@@ -1,55 +1,74 @@
-# Terminal Chatbot
+# Chatbot Application
 
-This is a simple terminal-based chatbot built using Hugging Face's `transformers` library. It utilizes the [facebook/blenderbot-400M-distill](https://huggingface.co/facebook/blenderbot-400M-distill) pre-trained conversational model.
+Welcome! 👋  
+This repository is a simple chatbot web application built with Flask and Hugging Face Transformers.
+
+---
+
+## About This Project
+
+This project provides a conversational AI chatbot using the [facebook/blenderbot-400M-distill](https://huggingface.co/facebook/blenderbot-400M-distill) model.  
+It features a web UI (leveraging templates from [ibm-developer-skills-network/LLM_application_chatbot](https://github.com/ibm-developer-skills-network/LLM_application_chatbot)) and a Flask backend that handles inference and conversation logic.
+
+---
 
 ## Features
 
-- **Conversational AI**: Uses BlenderBot, a powerful conversational model by Facebook AI.
-- **Terminal Interface**: Interact with the chatbot directly from your terminal.
-- **Contextual Memory**: Maintains a history of your conversation for more coherent responses.
+- **Conversational Memory:** Maintains context across turns during a session.
+- **Modern LLM Backend:** Uses Hugging Face's Blenderbot 400M distilled model for responses.
+- **Web Interface:** Clean, simple frontend for chatting with the bot.
+- **CORS Enabled:** Backend supports cross-origin requests.
+- **Modular:** Easy to swap models or adapt the front-end.
 
-## Requirements
+---
 
-- Python 3.6 or above
-- [transformers](https://pypi.org/project/transformers/)
-- [torch](https://pypi.org/project/torch/)
+## File Structure
 
-## Installation
+- `chatbot.py` — Main Flask application with chatbot logic.
+- `templates/` — HTML templates for the web UI (from IBM's repo).
+- `requirements.txt` — Python dependencies.
 
-First, clone this repository or download the `chatbot.py` file.
+---
 
-Install the required dependencies:
+## Getting Started
 
-```bash
-pip install transformers torch
-```
-
-## Usage
-
-Run the chatbot script in your terminal:
+### 1. Clone the Base Template
 
 ```bash
-python chatbot.py
+git clone https://github.com/ibm-developer-skills-network/LLM_application_chatbot
 ```
 
-Type your messages after the `>` prompt. The bot will respond, and the conversation will continue until you manually exit (e.g., with `Ctrl+C`).
+### 2. Install Requirements
 
-## Example
-
-```
-> Hello!
-Hello! How can I help you today?
-> Tell me a joke.
-Why did the scarecrow win an award? Because he was outstanding in his field!
+```bash
+python3.11 -m pip install -r LLM_application_chatbot/requirements.txt
 ```
 
-## Notes
+### 3. Add Your Chatbot File
 
-- The first time you run the script, the model weights will be downloaded. This may take a few minutes depending on your internet speed.
-- The script maintains the full conversation history for context, which may slow down long sessions.
+Replace or add your `chatbot.py` to the project root.
 
+### 4. Run the Application
 
-## Acknowledgements
+```bash
+python3.11 chatbot.py
+```
 
-- [Hugging Face Transformers](https://huggingface.co/transformers/)
-- [Facebook BlenderBot](https://huggingface.co/facebook/blenderbot-400M-distill)
+Then visit [http://localhost:5000](http://localhost:5000) in your browser.
+
+---
+
+## Notes & Limitations
+
+- **Conversation Length:** The model may crash if the conversation history becomes too long. Consider limiting history for production use.
+- **Model Download:** The first run will download the Blenderbot model from Hugging Face (~1GB).
+- **Customization:** You can modify `chatbot.py` to use other models or add new features.
+
+---
+
+## Credits
+
+- [AdityaK1301](https://github.com/AdityaK1301) — Project Author
+- [IBM Developer Skills Network](https://github.com/ibm-developer-skills-network) — Source of web UI templates
+
+---
