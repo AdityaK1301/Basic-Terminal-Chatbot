@@ -48,9 +48,6 @@ Why did the scarecrow win an award? Because he was outstanding in his field!
 - The first time you run the script, the model weights will be downloaded. This may take a few minutes depending on your internet speed.
 - The script maintains the full conversation history for context, which may slow down long sessions.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
